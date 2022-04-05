@@ -81,9 +81,45 @@ border:1px solid #fff;
   padding: 30px 0 30px;
   text-align: center;
 }
+.description-card {
+	left: 50%;
+	position: absolute;
+	top: 45%;
+	transform: translate(-50%, -55%);
+	text-align: center;
+  background-color: white;
+  border-radius: 5%;
+}
 
+.guestion-card {
+  background-color:white;
+  font-family:'Arial Narrow';
+  color: #000 !important;
+  font-size: 20px;
+  
+}
+
+.guestion-card button:hover {
+  border:1px solid #fff;
+    background:gray;
+    color:#000;
+  }
+
+.guestion-card p {
+  font-family:'Arial Narrow';
+  color: #000 !important;
+}
+.guestion{
+  text-decoration: underline;
+}
 
 @media (max-width: 575.98px) {
+  .guestion-card {
+    background-color:white;
+    font-family:'Arial Narrow';
+    color: #000 !important;
+    font-size: 10px;
+  }
   .description {
       left: 0;
       padding: 0 15px;
