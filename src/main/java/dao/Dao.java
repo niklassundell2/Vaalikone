@@ -9,7 +9,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import data.Fish;
+import data.Questions;
 
 import java.sql.Connection;
 
@@ -42,16 +42,16 @@ public class Dao {
 			return false;
 		}
 	}
-	public ArrayList<Fish> readAllFish() {
-		ArrayList<Fish> list=new ArrayList<>();
+	public ArrayList<Questions> readAllQuestions() {
+		ArrayList<Questions> list=new ArrayList<>();
 		try {
 			Statement stmt=conn.createStatement();
-			ResultSet RS=stmt.executeQuery("select * from fish");
+			ResultSet RS=stmt.executeQuery("select * from kysymykset");
 			while (RS.next()){
-				Fish f=new Fish();
-				f.setId(RS.getInt("id"));
-				f.setBreed(RS.getString("breed"));
-				list.add(f);
+				Questions q=new Questions();
+				q.setId(RS.getInt("KYSYMYS_ID"));
+				q.setQuestion(RS.getString("KYSYMYS"));
+				list.add(q);
 			}
 			return list;
 		}
@@ -59,45 +59,45 @@ public class Dao {
 			return null;
 		}
 	}
-	public ArrayList<Fish> updateFish(Fish f) {
+	public ArrayList<Questions> updateQuestions(Questions q) {
 		try {
-			String sql="update fish set breed=? where id=?";
+			String sql="update kysymykset set KYSYMYS=? where KYSYMYS_ID=?";
 			PreparedStatement pstmt=conn.prepareStatement(sql);
-			pstmt.setString(1, f.getBreed());
-			pstmt.setInt(2, f.getId());
+			pstmt.setString(1, q.getQuestion());
+			pstmt.setInt(2, q.getId());
 			pstmt.executeUpdate();
-			return readAllFish();
+			return readAllQuestions();
 		}
 		catch(SQLException e) {
 			return null;
 		}
 	}
-	public ArrayList<Fish> deleteFish(String id) {
+	public ArrayList<Questions> deleteQuestions(String id) {
 		try {
-			String sql="delete from fish where id=?";
+			String sql="delete from kysymykset where KYSYMYS_ID=?";
 			PreparedStatement pstmt=conn.prepareStatement(sql);
 			pstmt.setString(1, id);
 			pstmt.executeUpdate();
-			return readAllFish();
+			return readAllQuestions();
 		}
 		catch(SQLException e) {
 			return null;
 		}
 	}
 
-	public Fish readFish(String id) {
-		Fish f=null;
+	public Questions readQuestions(String id) {
+		Questions q=null;
 		try {
-			String sql="select * from fish where id=?";
+			String sql="select * from kysymykset where KYSYMYS_ID=?";
 			PreparedStatement pstmt=conn.prepareStatement(sql);
 			pstmt.setString(1, id);
 			ResultSet RS=pstmt.executeQuery();
 			while (RS.next()){
-				f=new Fish();
-				f.setId(RS.getInt("id"));
-				f.setBreed(RS.getString("breed"));
+				q=new Questions();
+				q.setId(RS.getInt("KYSYMYS_ID"));
+				q.setQuestion(RS.getString("KYSYMYS"));
 			}
-			return f;
+			return q;
 		}
 		catch(SQLException e) {
 			return null;
