@@ -20,7 +20,7 @@ import data.Questions;
 public class Update extends HttpServlet {
 	private Dao dao;
 	public void init() {
-		dao=new Dao("jdbc:mysql://localhost:3306/vaalikone", "niklas", "paras");
+		dao=new Dao("jdbc:mysql://localhost:3306/vaalikone", "root", "Mustekala18");
 	}
 	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response) 

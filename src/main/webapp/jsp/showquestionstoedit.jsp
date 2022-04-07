@@ -15,8 +15,7 @@
 <body>
 <h2>Edit question</h2>
 <form action='update' method='post'>
-Fish id: <input type='text' name='id' value='${requestScope.questions.KYSYMYS_ID}' readonly><br> 
-Fish breed: <input type='text' name='kysymys' value='${requestScope.questions.KYSYMYS}'><br>
+Kysymys: <input type='text' name='kysymys' value='${requestScope.questions.KYSYMYS}'><br>
 <input type='submit' name='ok' value='Send'> 
 </form>
 
