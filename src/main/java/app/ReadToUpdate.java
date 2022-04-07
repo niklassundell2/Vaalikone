@@ -12,15 +12,12 @@ import javax.servlet.http.HttpServletResponse;
 import dao.Dao;
 import data.Questions;
 
-/**
- * Servlet implementation class ReadToUpdate
- */
 @WebServlet("/readtoupdate")
 public class ReadToUpdate extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private Dao dao;
 	public void init() {
-		dao=new Dao("jdbc:mysql://localhost:3306/vaalikone", "laura", "rimanali123");
+		dao=new Dao("jdbc:mysql://localhost:3306/vaalikone", "niklas", "paras");
 	}
        
     /**

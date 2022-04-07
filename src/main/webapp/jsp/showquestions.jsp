@@ -1,8 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
  
- <%@ page import="java.util.ArrayList" %>   
- <%@ page import="data.Questions" %>   
+<%@ page import="java.util.ArrayList" %>   
+<%@ page import="data.Questions" %>   
     
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
     
@@ -17,7 +16,7 @@
 
 </head>
 <body>
-<h2>Fish applicationxxx69</h2>
+<h2>Questions</h2>
 <ol>
 <c:forEach var="kysymykset" items="${requestScope.kysymykset}" >
 <li>${questions.KYSYMYS_ID}: ${questions.KYSYMYS} <a href='/delete?id=${questions.KYSYMYS_ID}'>delete</a> <a href='/readtoupdate?id=${questons.KYSYMYS_ID}'>update</a>
@@ -35,8 +34,6 @@ for (int i=0;questionList!=null && i<questionList.size();i++){
 %>
 
 <%-- <%@ include file="../html/admin.html" %>--%>
-
-
 
 </body>
 </html>
