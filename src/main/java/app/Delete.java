@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.Dao;
-import data.Fish;
+import data.Questions;
 
 @WebServlet(
     name = "Delete",
@@ -20,18 +20,18 @@ import data.Fish;
 public class Delete extends HttpServlet {
 	private Dao dao;
 	public void init() {
-		dao=new Dao("jdbc:mysql://localhost:3306/fishdatabase", "laura", "rimanali123");
+		dao=new Dao("jdbc:mysql://localhost:3306/vaalikone", "laura", "rimanali123");
 	}
 	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response) 
 	     throws IOException, ServletException {
-		String id=request.getParameter("id");
-		ArrayList<Fish> list=null;
+		String id=request.getParameter("KYSYMYS_ID");
+		ArrayList<Questions> list=null;
 		if (dao.getConnection()) {
-			list=dao.deleteFish(id);
+			list=dao.deleteQuestions(id);
 		}
-		request.setAttribute("fishlist", list);
-		RequestDispatcher rd=request.getRequestDispatcher("/jsp/showfish.jsp");
+		request.setAttribute("kysymykset", list);
+		RequestDispatcher rd=request.getRequestDispatcher("/jsp/showquestions.jsp");
 		rd.forward(request, response);
 	}
 }

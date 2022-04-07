@@ -13,8 +13,8 @@
 <body>
 <h2>Edit fish</h2>
 <form action='update' method='post'>
-Fish id: <input type='text' name='id' value='${requestScope.fish.id}' readonly><br> 
-Fish breed: <input type='text' name='breed' value='${requestScope.fish.breed}'><br>
+Fish id: <input type='text' name='id' value='${requestScope.questions.KYSYMYS_ID}' readonly><br> 
+Fish breed: <input type='text' name='kysymys' value='${requestScope.questions.KYSYMYS}'><br>
 <input type='submit' name='ok' value='Send'> 
 </form>
 </body>
