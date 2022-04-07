@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.Dao;
-import data.Fish;
+import data.Questions;
 
 @WebServlet(
     name = "Update",
@@ -20,7 +20,7 @@ import data.Fish;
 public class Update extends HttpServlet {
 	private Dao dao;
 	public void init() {
-		dao=new Dao("jdbc:mysql://localhost:3306/fishdatabase", "laura", "rimanali123");
+		dao=new Dao("jdbc:mysql://localhost:3306/vaalikone", "laura", "rimanali123");
 	}
 	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response) 
@@ -29,18 +29,18 @@ public class Update extends HttpServlet {
 	}
 	public void doPost(HttpServletRequest request, HttpServletResponse response) 
 	     throws IOException, ServletException {
-		String id=request.getParameter("id");
-		String breed=request.getParameter("breed");
+		String id=request.getParameter("KYSYMYS_ID");
+		String question=request.getParameter("KYSYMYS");
 		
-		Fish f=new Fish(id, breed);
+		Questions q=new Questions(id, question);
 		
-		ArrayList<Fish> list=null;
+		ArrayList<Questions> list=null;
 		if (dao.getConnection()) {
-			list=dao.updateFish(f);
+			list=dao.updateQuestions(q);
 		}
 		
-		request.setAttribute("fishlist", list);
-		RequestDispatcher rd=request.getRequestDispatcher("/jsp/showfish.jsp");
+		request.setAttribute("questionslist", list);
+		RequestDispatcher rd=request.getRequestDispatcher("/jsp/showquestions.jsp");
 		rd.forward(request, response);
 	}
 }
