@@ -25,7 +25,7 @@ public class Update extends HttpServlet {
 	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response) 
 	     throws IOException {
-		response.sendRedirect("index.html");
+		response.sendRedirect("../index.html");
 	}
 	public void doPost(HttpServletRequest request, HttpServletResponse response) 
 	     throws IOException, ServletException {
@@ -40,7 +40,7 @@ public class Update extends HttpServlet {
 		}
 		
 		request.setAttribute("questionslist", list);
-		RequestDispatcher rd=request.getRequestDispatcher("/jsp/showquestions.jsp");
+		RequestDispatcher rd=request.getRequestDispatcher("/jsp/admin.jsp");
 		rd.forward(request, response);
 	}
 }

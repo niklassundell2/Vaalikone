@@ -52,6 +52,8 @@
         </div>
       </header>
       
+
+      
 	<div class="modal fade" id="hallinnoiKysymys" tabindex="-1" role="dialog" aria-labelledby="hallinnoiKysymys" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
@@ -62,15 +64,11 @@
         </button>
       </div>
       <div class="modal-body">
-        <%
-			ArrayList<Questions> questionList=(ArrayList<Questions>)request.getAttribute("kysymykset");
-			
-			for (int i=0;questionList!=null && i<questionList.size();i++){
-				Questions q=questionList.get(i);
-				out.println(q.getId()+": "+q.getQuestion()+"<a href='/delete?id="+q.getId()+"'>delete</a> <a href='/readtoupdate?id="+q.getId()+"'>update</a></br>");
-				
-			}
-		%>
+
+			<c:forEach var="Questions" items="${requestScope.kysymykset}" >
+			<li>${Questions.id}: ${Questions.question} <a href='/delete?KYSYMYS_ID=${Questions.id}'>delete</a> <a href='/readtoupdate?KYSYMYS_ID=${Questions.id}'>update</a>
+			</c:forEach>
+		
       </div>
     </div>
   </div>
