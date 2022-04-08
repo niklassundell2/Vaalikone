@@ -1,3 +1,10 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+ 
+<%@ page import="java.util.ArrayList" %>   
+<%@ page import="data.Questions" %>   
+    
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -44,16 +51,38 @@
 
         </div>
       </header>
+      
 
+      
+	<div class="modal fade" id="hallinnoiKysymys" tabindex="-1" role="dialog" aria-labelledby="hallinnoiKysymys" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Hallinnoi kysymyksia</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+			<c:forEach var="Questions" items="${requestScope.kysymykset}" >
+			<li>${Questions.id}: ${Questions.question} <a href='/delete?KYSYMYS_ID=${Questions.id}'>delete</a> <a href='/readtoupdate?KYSYMYS_ID=${Questions.id}'>update</a>
+			</c:forEach>
+		
+      </div>
+    </div>
+  </div>
+</div>
       <div class="description">
         <div class="container features">
           <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12">
         <h1>Find Your Candidates!</h1>
         <p>We offer you access to get to know all candidates.<br> Take a quick test and find out whose values and opinions match yours.</p>
-        <button class="btn btn-outline-secondary btn-lg">Lisää kysymys</button>
-        <button class="btn btn-outline-secondary btn-lg">Muokkaa kysymystä</button>
-        <button class="btn btn-outline-secondary btn-lg">Poista kysymys</button>
+        <button class="btn btn-outline-secondary btn-lg">Hallinnoi ehdokkaita</button>
+        <button type="button" class="btn btn-outline-secondary btn-lg"data-toggle="modal" data-target="#hallinnoiKysymys">Hallinnoi kysymyksia</button>
+        
+
       </div>
     </div>
   </div>
@@ -65,7 +94,7 @@
                 <div class="col-lg-12 col-md-12 col-sm-8">
                     <h6 class="text-uppercase font-weight-bold">Additional Information</h6>
                     <p>Authors: Niklas Sundell, Niko Rantala, Laura Mattila</p>
-                    <address>Hämeen ammattikorkeakoulu HAMK PL 230 13101 Hämeenlinna</address>
+                    <address>HÃ¤meen ammattikorkeakoulu HAMK PL 230 13101 HÃ¤meenlinna</address>
             </div>
           </div>
         </div>

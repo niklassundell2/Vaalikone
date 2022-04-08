@@ -1,6 +1,7 @@
 package app;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,10 +13,13 @@ import javax.servlet.http.HttpServletResponse;
 import dao.Dao;
 import data.Questions;
 
-@WebServlet("/readtoupdate")
-public class ReadToUpdate extends HttpServlet {
+@WebServlet("/showadmin")
+
+public class ShowAdmin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private Dao dao;
+	private Dao dao=null;
+	
+	@Override
 	public void init() {
 		dao=new Dao("jdbc:mysql://localhost:3306/vaalikone", "root", "Mustekala18");
 	}
@@ -23,7 +27,7 @@ public class ReadToUpdate extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ReadToUpdate() {
+    public ShowAdmin() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,15 +36,16 @@ public class ReadToUpdate extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		String id=request.getParameter("KYSYMYS_ID");
-		Questions q=null;
+		ArrayList<Questions> list=null;
 		if (dao.getConnection()) {
-			q=dao.readQuestions(id);
+			list=dao.readAllQuestions();
 		}
-		request.setAttribute("kysymykset", q);
+		else {
+			System.out.println("No connection to database");
+		}
+		request.setAttribute("kysymykset", list);
 		
-		RequestDispatcher rd=request.getRequestDispatcher("/jsp/showquestionstoedit.jsp");
+		RequestDispatcher rd=request.getRequestDispatcher("/jsp/admin.jsp");
 		rd.forward(request, response);
 	}
 }

@@ -20,7 +20,7 @@ import data.Questions;
 public class Delete extends HttpServlet {
 	private Dao dao;
 	public void init() {
-		dao=new Dao("jdbc:mysql://localhost:3306/vaalikone", "niklas", "paras");
+		dao=new Dao("jdbc:mysql://localhost:3306/vaalikone", "root", "Mustekala18");
 	}
 	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response) 
@@ -31,7 +31,7 @@ public class Delete extends HttpServlet {
 			list=dao.deleteQuestions(id);
 		}
 		request.setAttribute("kysymykset", list);
-		RequestDispatcher rd=request.getRequestDispatcher("/jsp/showquestions.jsp");
+		RequestDispatcher rd=request.getRequestDispatcher("/jsp/admin.jsp");
 		rd.forward(request, response);
 	}
 }
