@@ -20,12 +20,12 @@ import data.Questions;
 public class Update extends HttpServlet {
 	private Dao dao;
 	public void init() {
-		dao=new Dao("jdbc:mysql://localhost:3306/vaalikone", "laura", "rimanali123");
+		dao=new Dao("jdbc:mysql://localhost:3306/vaalikone", "root", "Mustekala18");
 	}
 	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response) 
 	     throws IOException {
-		response.sendRedirect("index.html");
+		response.sendRedirect("../index.html");
 	}
 	public void doPost(HttpServletRequest request, HttpServletResponse response) 
 	     throws IOException, ServletException {
@@ -40,7 +40,7 @@ public class Update extends HttpServlet {
 		}
 		
 		request.setAttribute("questionslist", list);
-		RequestDispatcher rd=request.getRequestDispatcher("/jsp/showquestions.jsp");
+		RequestDispatcher rd=request.getRequestDispatcher("/jsp/admin.jsp");
 		rd.forward(request, response);
 	}
 }
