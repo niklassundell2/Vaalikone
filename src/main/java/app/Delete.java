@@ -31,7 +31,7 @@ public class Delete extends HttpServlet {
 			list=dao.deleteQuestions(id);
 		}
 		request.setAttribute("kysymykset", list);
-		RequestDispatcher rd=request.getRequestDispatcher("/jsp/showquestions.jsp");
+		RequestDispatcher rd=request.getRequestDispatcher("/jsp/admin.jsp");
 		rd.forward(request, response);
 	}
 }
