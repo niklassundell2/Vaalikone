@@ -14,23 +14,26 @@ import dao.Dao;
 import data.Questions;
 
 @WebServlet(
-    name = "Delete",
-    urlPatterns = {"/delete"}
+    name = "AddQuestion",
+    urlPatterns = {"/addquestion"}
 )
-public class Delete extends HttpServlet {
+public class AddQuestion extends HttpServlet {
 	private Dao dao;
 	public void init() {
 		dao=new Dao("jdbc:mysql://localhost:3306/vaalikone", "laura", "rimanali123");
 	}
-	@Override
+
 	public void doGet(HttpServletRequest request, HttpServletResponse response) 
 	     throws IOException, ServletException {
-		String id=request.getParameter("KYSYMYS_ID");
+		String question=request.getParameter("KYSYMYS");
+	
+		
 		ArrayList<Questions> list=null;
 		if (dao.getConnection()) {
-			list=dao.deleteQuestions(id);
+			list=dao.addQuestions(question);
 		}
-		request.setAttribute("kysymykset", list);
+		
+		request.setAttribute("questionslist", list);
 		RequestDispatcher rd=request.getRequestDispatcher("/jsp/admin.jsp");
 		rd.forward(request, response);
 	}
