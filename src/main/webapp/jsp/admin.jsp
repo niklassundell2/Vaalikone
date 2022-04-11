@@ -66,7 +66,7 @@
       <div class="modal-body">
 
 			<c:forEach var="Questions" items="${requestScope.kysymykset}" >
-			<li>${Questions.id}: ${Questions.question} <a href='/delete?KYSYMYS_ID=${Questions.id}'>delete</a> <a href='/readtoupdate?KYSYMYS_ID=${Questions.id}'>update</a>
+			<li>${Questions.id}: ${Questions.question} <a href='/delete?KYSYMYS_ID=${Questions.id}'>delete</a> <a href='/readtoupdate?KYSYMYS_ID=${Questions.id}'>update</a> <a href='/addquestion.jsp'>add</a>
 			</c:forEach>
 		
       </div>
