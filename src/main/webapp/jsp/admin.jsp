@@ -29,7 +29,7 @@
           <div class="collapse navbar-collapse" id="main-navigation">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" href="#">Home</a>
+                <a class="nav-link" href="/index.html">Home</a>
               </li>
               <li class="nav-item">
                 
@@ -37,9 +37,11 @@
               </li>
               <li class="nav-item">
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalCenter">
+                <form action="../index.html">
+                <button type="submit" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalCenter">
                   Log off
                 </button>
+                </form>
               </li>
             </ul>
           </div>
@@ -66,8 +68,9 @@
       <div class="modal-body">
 
 			<c:forEach var="Questions" items="${requestScope.kysymykset}" >
-			<li>${Questions.id}: ${Questions.question} <a href='/delete?KYSYMYS_ID=${Questions.id}'>delete</a> <a href='/readtoupdate?KYSYMYS_ID=${Questions.id}'>update</a> <a href='/addquestion.jsp'>add</a>
+			<li>${Questions.id}: ${Questions.question} <a href='/delete?KYSYMYS_ID=${Questions.id}'>delete</a> <a href='/readtoupdate?KYSYMYS_ID=${Questions.id}'>update</a> 
 			</c:forEach>
+			<br><a href='/readtoadd' class="btn btn-primary">Add question</a>
 		
       </div>
     </div>
@@ -77,8 +80,7 @@
         <div class="container features">
           <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12">
-        <h1>Find Your Candidates!</h1>
-        <p>We offer you access to get to know all candidates.<br> Take a quick test and find out whose values and opinions match yours.</p>
+        <h1>Admin management</h1>
         <button class="btn btn-outline-secondary btn-lg">Hallinnoi ehdokkaita</button>
         <button type="button" class="btn btn-outline-secondary btn-lg"data-toggle="modal" data-target="#hallinnoiKysymys">Hallinnoi kysymyksia</button>
         
