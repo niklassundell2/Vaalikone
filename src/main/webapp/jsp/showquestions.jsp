@@ -62,7 +62,7 @@ ArrayList<Questions> questionList=(ArrayList<Questions>)request.getAttribute("ky
 
 for (int i=0;questionList!=null && i<questionList.size();i++){
 	Questions q=questionList.get(i);
-	out.println(q.getId()+": "+q.getQuestion()+"<a href='/delete?id="+q.getId()+"'>delete</a> <a href='/readtoupdate?id="+q.getId()+"'>update</a></br>");
+	out.print("<div class='guestion-card mt-5'><div class='text-center guestion'><p><strong>"+q.getQuestion()+"</strong></p></div><div class='text-center mx-auto mb-5'><div class='d-inline mx-2'>Täysin eri mieltä</div> <div class='form-check form-check-inline'> <input class='form-check-input' type='radio' name='inlineRadioOptions"+(i)+"' id='inlineRadio1'value='option1' /><label class='form-check-label' for='inlineRadio1'>1</label></div><div class='form-check form-check-inline'><input class='form-check-input' type='radio' name='inlineRadioOptions"+(i)+"' id='inlineRadio2'value='option2' /><label class='form-check-label' for='inlineRadio2'>2</label></div> <div class='form-check form-check-inline'><input class='form-check-input' type='radio' name='inlineRadioOptions"+(i)+"' id='inlineRadio3'value='option3' /><label class='form-check-label' for='inlineRadio3'>3</label></div><div class='form-check form-check-inline'><input class='form-check-input' type='radio' name='inlineRadioOptions"+(i)+"' id='inlineRadio4'value='option4' /><label class='form-check-label' for='inlineRadio4'>4</label></div><div class='form-check form-check-inline'><input class='form-check-input' type='radio' name='inlineRadioOptions"+(i)+"' id='inlineRadio5'value='option5' /><label class='form-check-label' for='inlineRadio5'>5</label></div><div class='d-inline mx-2'>Täysin samaa mieltä</div></div></div>");	  
 	
 }
 %>
