@@ -27,7 +27,7 @@
       <div class="collapse navbar-collapse" id="main-navigation">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="#">Home</a>
+            <a class="nav-link" href="/index.html">Home</a>
           </li>
           <li class="nav-item">
             
@@ -67,6 +67,9 @@ for (int i=0;questionList!=null && i<questionList.size();i++){
 }
 %>
 <!-- Modal -->
+  <div class="text-center mt-5">
+    <button type="button" class="btn btn-primary mx-auto my-2">Submit</button>
+  </div>
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
@@ -120,5 +123,4 @@ for (int i=0;questionList!=null && i<questionList.size();i++){
 
 
 </body>
-</html>
 </html>
