@@ -105,4 +105,20 @@ public class Dao {
 			return null;
 		}
 	}
+	
+	
+	public ArrayList<Questions> addQuestions(String q) {
+		try {
+			String sql="insert into kysymykset (KYSYMYS) values (?)";
+			PreparedStatement pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, q);
+			pstmt.executeUpdate();
+			return readAllQuestions();
+		}
+		catch(SQLException e) {
+			return null;
+		}
+	}
+	
+
 }
