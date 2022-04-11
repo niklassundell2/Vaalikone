@@ -21,7 +21,7 @@ public class ShowAdmin extends HttpServlet {
 	
 	@Override
 	public void init() {
-		dao=new Dao("jdbc:mysql://localhost:3306/vaalikone", "root", "Mustekala18");
+		dao=new Dao("jdbc:mysql://localhost:3306/vaalikone", "laura", "rimanali123");
 	}
        
     /**
