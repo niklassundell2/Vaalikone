@@ -18,18 +18,21 @@ import data.Questions;
     urlPatterns = {"/addquestion"}
 )
 public class AddQuestion extends HttpServlet {
+	
 	private Dao dao;
+	
 	public void init() {
-		dao=new Dao("jdbc:mysql://localhost:3306/vaalikone", "root", "Mustekala18");
+		
+		dao=new Dao("jdbc:mysql://localhost:3306/vaalikone", "niklas", "paras");
 	}
 
-	public void doGet(HttpServletRequest request, HttpServletResponse response) 
-	     throws IOException, ServletException {
-		String question=request.getParameter("KYSYMYS");
-	
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		
+		String question=request.getParameter("KYSYMYS");
 		ArrayList<Questions> list=null;
+			
 		if (dao.getConnection()) {
+				
 			list=dao.addQuestions(question);
 		}
 		
