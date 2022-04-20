@@ -1,164 +1,194 @@
 body {
-  padding: 0;
-  margin: 0;
-  background: #aaa9aa;
-  font-style:normal;
-  font-family:'Arial Narrow';
+	
+ 	padding: 0;
+ 	margin: 0;
+	background: #aaa9aa;
+  	font-style:normal;
+  	font-family:'Arial Narrow';
 }
 
 .header {
-  background-image: url('testi3.jpg');
-  background-size: cover;
-  background-position: center;
-  position: relative;
+	
+  	background-image: url('testi3.jpg');
+  	background-size: cover;
+  	background-position: center;
+  	position: relative;
 }
+
 .navbar {
- background-color: rgb(44, 43, 43);
+	
+ 	background-color: rgb(44, 43, 43);
 }
+
 .nav-link,
 .navbar-brand {
-  color: #fff;
-  cursor: pointer;
+	
+  	color: #fff;
+  	cursor: pointer;
 }
+
 .nav-link {
-  margin-right: 1em !important;
+	
+  	margin-right: 1em !important;
 }
+
 .nav-link:hover {
-  color: #000;
+	
+  	color: #000;
 }
+
 .navbar-collapse {
-  justify-content: flex-end;
+	
+  	justify-content: flex-end;
 }
 
 .overlay {
-  position: absolute;
-  min-height: 100%;
-  min-width: 100%;
-  left: 0;
-  top: 0;
-  background: rgba(0, 0, 0, 0.6);
+	
+  	position: absolute;
+  	min-height: 100%;
+  	min-width: 100%;
+  	left: 0;
+  	top: 0;
+  	background: rgba(0, 0, 0, 0.6);
 }
 
 .description {
+	
 	left: 50%;
 	position: absolute;
 	top: 45%;
 	transform: translate(-50%, -55%);
 	text-align: center;
 }
+
 .description h1 {
+	
 	color: white;
-  text-decoration:underline;
-  
+  	text-decoration:underline;
 }
+
 .description p {
+	
 	color: white;
 	font-size: 1.4rem;
 	line-height: 2.0;
-  
 }
 
 .description button {
-  background:rgba(0, 0, 0, 0);
-  border-radius: 2px;
-  color:black;
-  background-color: white;
-  text-align: center;
-  align-items: center;
-  margin-right: 50px;
-  margin-right: 50px;
+	
+  	background:rgba(0, 0, 0, 0);
+  	border-radius: 2px;
+  	color:black;
+  	background-color: white;
+ 	text-align: center;
+ 	align-items: center;
+ 	margin-right: 50px;
+  	margin-right: 50px;
 }
 
 .description button:hover {
-border:1px solid #fff;
-  background:#fff;
-  color:#000;
+	
+	border:1px solid #fff;
+  	background:#fff;
+  	color:#000;
 }
 
 .page-footer {
-  background-color: rgb(44, 43, 43);
-  color: #ccc;
-  padding: 30px 0 30px;
-  text-align: center;
-
+	
+  	background-color: rgb(44, 43, 43);
+  	color: #ccc;
+  	padding: 30px 0 30px;
+  	text-align: center;
 }
+
 .description-card {
+	
 	left: 50%;
 	position: absolute;
 	top: 45%;
 	transform: translate(-50%, -55%);
 	text-align: center;
-  background-color: white;
-  height: 75%;
-  width: 50%;
-  overflow-y: hidden;
-  border-radius: 5%;
-  overflow:auto;
-  
-  
-  
+  	background-color: white;
+  	height: 75%;
+  	width: 50%;
+  	overflow-y: hidden;
+  	border-radius: 5%;
+  	overflow:auto;
 }
 
 .guestion-card {
-  background-color:white;
-  font-family:'Arial Narrow';
-  color: #000 !important;
-  font-size: 20px;
-  
+	
+  	background-color:white;
+  	font-family:'Arial Narrow';
+  	color: #000 !important;
+  	font-size: 20px;
 }
 
 .guestion-card button:hover {
-  border:1px solid #fff;
+	
+  	border:1px solid #fff;
     background:gray;
     color:#000;
-  }
+}
 
 .guestion-card p {
-  font-family:'Arial Narrow';
-  color: #000 !important;
+	
+  	font-family:'Arial Narrow';
+  	color: #000 !important;
 }
+
 .guestion{
-  text-decoration: underline;
+	
+  	text-decoration: underline;
 }
 
 @media (max-width: 575.98px) {
+	
   .guestion-card {
-    background-color:white;
-    font-family:'Arial Narrow';
-    color: #000 !important;
-    font-size: 10px;
+    
+    	background-color:white;
+    	font-family:'Arial Narrow';
+    	color: #000 !important;
+    	font-size: 10px;
   }
+  
   .description {
-      left: 0;
-      padding: 0 15px;
-      position: absolute;
-      top: 10%;
-      transform: none;
-      text-align: center;
+  
+      	left: 0;
+      	padding: 0 15px;
+     	position: absolute;
+     	top: 10%;
+     	transform: none;
+      	text-align: center;
   }
 
   .description h1 {
+  
       font-size: 2em;
   }
 
   .description p {
+  
       font-size: 1.2rem;
   }
 
   .features {
+  
       margin: 0;
   }
 }
 
 .features {
+	
 	margin: 4em auto;
 	padding: 1em;
 	position: relative;
-  text-align: center;
-  border-radius: 10px;
-  
+  	text-align: center;
+  	border-radius: 10px;
 }
+
 .feature-title {
+	
 	color: #333;
 	font-size: 1.3rem;
 	font-weight: 700;

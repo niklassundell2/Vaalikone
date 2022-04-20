@@ -18,18 +18,26 @@ import data.Questions;
     urlPatterns = {"/delete"}
 )
 public class Delete extends HttpServlet {
+	
 	private Dao dao;
+	
 	public void init() {
-		dao=new Dao("jdbc:mysql://localhost:3306/vaalikone", "laura", "rimanali123");
+		
+		dao=new Dao("jdbc:mysql://localhost:3306/vaalikone", "niklas", "paras");
 	}
+	
 	@Override
-	public void doGet(HttpServletRequest request, HttpServletResponse response) 
-	     throws IOException, ServletException {
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+		
 		String id=request.getParameter("KYSYMYS_ID");
+		
 		ArrayList<Questions> list=null;
+		
 		if (dao.getConnection()) {
+			
 			list=dao.deleteQuestions(id);
 		}
+			
 		request.setAttribute("kysymykset", list);
 		RequestDispatcher rd=request.getRequestDispatcher("/jsp/admin.jsp");
 		rd.forward(request, response);

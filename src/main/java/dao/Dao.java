@@ -1,8 +1,5 @@
 package dao;
 
-
-
-
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -14,8 +11,8 @@ import data.Questions;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-
 public class Dao {
+	
 	private String url;
 	private String user;
 	private String pass;
@@ -86,7 +83,6 @@ public class Dao {
 			return null;
 		}
 	}
-
 	public Questions readQuestions(String id) {
 		Questions q=null;
 		try {
@@ -105,8 +101,6 @@ public class Dao {
 			return null;
 		}
 	}
-	
-	
 	public ArrayList<Questions> addQuestions(String q) {
 		try {
 			String sql="insert into kysymykset (KYSYMYS) values (?)";
@@ -119,6 +113,4 @@ public class Dao {
 			return null;
 		}
 	}
-	
-
 }

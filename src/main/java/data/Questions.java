@@ -1,8 +1,10 @@
 package data;
 
 public class Questions {
+	
 	private int KYSYMYS_ID;
 	private String KYSYMYS;
+	
 	public Questions(String id, String question) {
 		// TODO Auto-generated constructor stub
 		setId(id);
@@ -12,13 +14,17 @@ public class Questions {
 		// TODO Auto-generated constructor stub
 	}
 	public int getId() {
+		
 		return KYSYMYS_ID;
 	}
 	public void setId(int id) {
+		
 		this.KYSYMYS_ID = id;
 	}
 	public void setId(String id) {
+		
 		try {
+			
 			this.KYSYMYS_ID = Integer.parseInt(id);
 		}
 		catch(NumberFormatException | NullPointerException e) {
@@ -26,9 +32,11 @@ public class Questions {
 		}
 	}
 	public String getQuestion() {
+		
 		return KYSYMYS;
 	}
 	public void setQuestion(String question) {
+		
 		this.KYSYMYS = question;
 	}
 }
