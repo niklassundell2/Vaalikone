@@ -18,24 +18,30 @@ import data.Questions;
     urlPatterns = {"/update"}
 )
 public class Update extends HttpServlet {
+	
 	private Dao dao;
+	
 	public void init() {
-		dao=new Dao("jdbc:mysql://localhost:3306/vaalikone", "laura", "rimanali123");
+		
+		dao=new Dao("jdbc:mysql://localhost:3306/vaalikone", "niklas", "paras");
 	}
+	
 	@Override
-	public void doGet(HttpServletRequest request, HttpServletResponse response) 
-	     throws IOException {
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		
 		response.sendRedirect("../index.html");
 	}
-	public void doPost(HttpServletRequest request, HttpServletResponse response) 
-	     throws IOException, ServletException {
+	
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+		
 		String id=request.getParameter("KYSYMYS_ID");
 		String question=request.getParameter("KYSYMYS");
-		
 		Questions q=new Questions(id, question);
 		
 		ArrayList<Questions> list=null;
+		
 		if (dao.getConnection()) {
+				
 			list=dao.updateQuestions(q);
 		}
 		

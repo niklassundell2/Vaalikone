@@ -4,21 +4,17 @@
     
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Vaalikone</title>
-
-<link rel="stylesheet" type="text/css" href="mycssfilesomewhere.css">
-<script src="myscriptfile.js"></script>
-
-</head>
-<body>
-<h2>Edit question</h2>
-<form action='update' method='post'>
-ID: <input type='text' name='KYSYMYS_ID' value='${requestScope.kysymykset.id}'readonly><br>
-Kysymys: <input type='text' name='KYSYMYS' size="100" value='${requestScope.kysymykset.question}'><br>
-<input type='submit' name='ok' value='Send'> 
-</form>
-
-</body>
+	<head>
+		<meta charset="UTF-8">
+		<title>Vaalikone</title>
+	</head>
+	
+	<body>
+		<h2>Edit question</h2>
+		<form action='update' method='post'>
+			ID: <input type='text' name='KYSYMYS_ID' value='${requestScope.kysymykset.id}'readonly><br>
+			Kysymys: <input type='text' name='KYSYMYS' size="100" value='${requestScope.kysymykset.question}'><br>
+			<input type='submit' name='ok' value='Send'> 
+		</form>
+	</body>
 </html>
