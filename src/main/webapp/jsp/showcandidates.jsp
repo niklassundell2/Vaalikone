@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
  
 <%@ page import="java.util.ArrayList" %>   
-<%@ page import="data.Questions" %>   
+<%@ page import="data.Candidates" %>   
     
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-<!-- Show questions site -->
+<!-- Show candidates site -->
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -55,12 +55,12 @@
 					<h1>Find Your Candidates!</h1>
 					<!-- Loop -->
 					<%
-					ArrayList<Questions> questionList=(ArrayList<Questions>)request.getAttribute("kysymykset");
+					ArrayList<Candidates> candidatesList=(ArrayList<Candidates>)request.getAttribute("ehdokkaat");
 
-					for (int i=0;questionList!=null && i<questionList.size();i++){
+					for (int i=0;candidatesList!=null && i<candidatesList.size();i++){
 						
-					Questions q=questionList.get(i);
-					out.print("<div class='guestion-card mt-5'><div class='text-center guestion'><p><strong>"+q.getQuestion()+"</strong></p></div><div class='text-center mx-auto mb-5'><div class='d-inline mx-2'>Täysin eri mieltä</div> <div class='form-check form-check-inline'> <input class='form-check-input' type='radio' name='inlineRadioOptions"+(i)+"' id='inlineRadio1'value='option1' /><label class='form-check-label' for='inlineRadio1'>1</label></div><div class='form-check form-check-inline'><input class='form-check-input' type='radio' name='inlineRadioOptions"+(i)+"' id='inlineRadio2'value='option2' /><label class='form-check-label' for='inlineRadio2'>2</label></div> <div class='form-check form-check-inline'><input class='form-check-input' type='radio' name='inlineRadioOptions"+(i)+"' id='inlineRadio3'value='option3' /><label class='form-check-label' for='inlineRadio3'>3</label></div><div class='form-check form-check-inline'><input class='form-check-input' type='radio' name='inlineRadioOptions"+(i)+"' id='inlineRadio4'value='option4' /><label class='form-check-label' for='inlineRadio4'>4</label></div><div class='form-check form-check-inline'><input class='form-check-input' type='radio' name='inlineRadioOptions"+(i)+"' id='inlineRadio5'value='option5' /><label class='form-check-label' for='inlineRadio5'>5</label></div><div class='d-inline mx-2'>Täysin samaa mieltä</div></div></div>");
+					Candidates q=candidatesList.get(i);
+					out.print("<div class='guestion-card mt-5'><div class='text-center guestion'><p><strong>"+q.getLastName()+"</strong></p><p><strong>"+q.getFirstName()+"</strong></p><p><strong>"+q.getAge()+"</strong></p></div></div>");
 					}
 					%>
   					<div class="text-center mt-5">

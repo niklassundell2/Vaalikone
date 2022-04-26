@@ -7,6 +7,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import data.Questions;
+import data.Candidates;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -108,6 +109,30 @@ public class Dao {
 			pstmt.setString(1, q);
 			pstmt.executeUpdate();
 			return readAllQuestions();
+		}
+		catch(SQLException e) {
+			return null;
+		}
+	}
+	public ArrayList<Candidates> readAllCandidates() {
+		ArrayList<Candidates> list=new ArrayList<>();
+		try {
+			Statement stmt=conn.createStatement();
+			ResultSet RS=stmt.executeQuery("select * from ehdokkaat");
+			while (RS.next()){
+				Candidates q=new Candidates();
+				q.setId(RS.getInt("EHDOKAS_ID"));
+				q.setLastName(RS.getString("SUKUNIMI"));
+				q.setFirstName(RS.getString("ETUNIMI"));
+				q.setParty(RS.getString("PUOLUE"));
+				q.setDomicile(RS.getString("KOTIPAIKKAKUNTA"));
+				q.setAge(RS.getInt("IKA"));
+				q.setParliament(RS.getString("MIKSI_EDUSKUNTAAN"));
+				q.setImprovement(RS.getString("MITA_ASIOITA_HALUAT_EDISTAA"));
+				q.setJob(RS.getString("AMMATTI"));
+				list.add(q);
+			}
+			return list;
 		}
 		catch(SQLException e) {
 			return null;
