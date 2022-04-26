@@ -42,17 +42,13 @@
     		</nav>
  		</div>
 
-    	<header class="page-header header container-fluid">
-      		<div class="overlay">
-      		</div>
-    	</header>
 
 <!-- Question list -->
-    <div class="description-card mt-5">
+  
     	<div class="container features">
         	<div class="row">
             	<div class="col-lg-12 col-md-12 col-sm-12">
-					<h1>Find Your Candidates!</h1>
+					<h1>Take a test!</h1>
 					<!-- Loop -->
 					<%
 					ArrayList<Questions> questionList=(ArrayList<Questions>)request.getAttribute("kysymykset");
@@ -69,7 +65,7 @@
   				</div>
   			</div>
   		</div>
-  	</div>
+
   				
 <!-- Login modal -->
 	<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">

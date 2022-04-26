@@ -23,7 +23,7 @@ public class AddQuestion extends HttpServlet {
 	
 	public void init() {
 		
-		dao=new Dao("jdbc:mysql://localhost:3306/vaalikone", "niklas", "paras");
+		dao=new Dao("jdbc:mysql://localhost:3306/vaalikone", "root", "rimanali123");
 	}
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {

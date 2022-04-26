@@ -2,7 +2,7 @@ body {
 	
  	padding: 0;
  	margin: 0;
-	background: #aaa9aa;
+	background: #c0c0c0;
   	font-style:normal;
   	font-family:'Arial Narrow';
 }
@@ -101,27 +101,21 @@ body {
   	text-align: center;
 }
 
-.description-card {
-	
-	left: 50%;
-	position: absolute;
-	top: 45%;
-	transform: translate(-50%, -55%);
-	text-align: center;
-  	background-color: white;
-  	height: 75%;
-  	width: 50%;
-  	overflow-y: hidden;
-  	border-radius: 5%;
-  	overflow:auto;
-}
+
 
 .guestion-card {
 	
-  	background-color:white;
+  	background-color:#ffffff;
   	font-family:'Arial Narrow';
   	color: #000 !important;
   	font-size: 20px;
+  	text-align: center;
+ 	align-items: center;
+ 	border-radius: 15px;
+ 	padding: 4%;
+ 	box-shadow: 10px 10px gray;
+ 
+  
 }
 
 .guestion-card button:hover {
@@ -135,6 +129,7 @@ body {
 	
   	font-family:'Arial Narrow';
   	color: #000 !important;
+  	font-size:20px;
 }
 
 .guestion{

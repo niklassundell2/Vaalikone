@@ -11,11 +11,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.Dao;
-import data.Questions;
+import data.Candidates;
 
-@WebServlet("/showadmin")
+@WebServlet("/showcandidates")
 
-public class ShowAdmin extends HttpServlet {
+public class ShowCandidates extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
 	private Dao dao=null;
@@ -29,7 +29,7 @@ public class ShowAdmin extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ShowAdmin() {
+    public ShowCandidates() {
     	
         super();
         // TODO Auto-generated constructor stub
@@ -40,19 +40,19 @@ public class ShowAdmin extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		ArrayList<Questions> list=null;
+		ArrayList<Candidates> list=null;
 		
 		if (dao.getConnection()) {
 			
-			list=dao.readAllQuestions();
+			list=dao.readAllCandidates();
 		}
 		else {
 			
 			System.out.println("No connection to database");
 		}
 		
-		request.setAttribute("kysymykset", list);
-		RequestDispatcher rd=request.getRequestDispatcher("/jsp/admin.jsp");
+		request.setAttribute("ehdokkaat", list);
+		RequestDispatcher rd=request.getRequestDispatcher("/jsp/showcandidates.jsp");
 		rd.forward(request, response);
 	}
 }
